@@ -1,0 +1,59 @@
+@mixin notification {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    justify-self: end;
+    position: absolute;
+    background: rgba(42, 48, 72, 0.51);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    height: 5rem;
+    width: 24rem;
+    margin-right: 2%;
+    margin-top: 2%;
+    p {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: 0.02em;
+        margin-left: 5%;
+        color: #FF2C2C;
+
+    }
+
+    img {
+        width: 30px;
+        object-fit: contain;
+        margin-left: 5%;
+    }
+    button { 
+        position: absolute;
+        left: 0;
+        top: 5px;
+        transform:translate(-50%,-50%);
+        border: none;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 1rem;
+        background-color: rgba(255, 255, 255, 0.938);
+        color: red;
+        font-family: Roboto;
+        font-weight: bold;
+        font-size: 1rem;
+        box-shadow: 0px 0px 14px 4px rgba(0,0,0,0.1);
+    }
+}
+
+.notification--displayed {
+    @include notification;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.2s linear;
+}
+
+.notification--hidden {
+    @include notification;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.1s linear;
+}

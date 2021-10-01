@@ -1,0 +1,135 @@
+@import "../scss/fonts.scss";
+
+html, body {
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    overflow: auto;
+}
+
+html, body, #root, .App {
+  height: 100%;
+}
+
+button {
+    -webkit-appearance: none;
+}
+
+.layout-disconnected {
+    display: flex;
+    background-color: #202541;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+}
+
+.layout-connected {
+    display: flex;
+    background-color: #202541;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+    max-height: -webkit-fill-available;
+
+}
+
+.layout-connected {
+
+
+
+}
+
+.main-disconnected {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+
+}
+
+.main-connected {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, auto) 5fr;
+    height: 100%;
+    max-height: -webkit-fill-available;
+min-height: -webkit-fill-available;
+    > div:nth-child(1) {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        /* Line 21 */
+        border-left: 3px solid #2C3044;
+        margin-left: 1rem;
+        height: 70%;
+        align-self: center;
+    }
+
+}
+
+.layout-connected {
+    > div:nth-child(3) {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+}
+
+.hide-div {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    // max-height: -webkit-fill-available;
+}
+
+.back-to-menu {
+    margin-top: .8rem;
+    margin-left: 1rem;
+    z-index: 10;
+    display: none;
+    button {
+        display: none;
+        left: 500px;
+        color: red;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        height: 30px;
+        width: 30px;
+        background-image: url('../img/menu.png');
+        background-size: contain;
+        border: none;
+        z-index: 10;
+    }
+    p {
+        display: none;
+        @include p--font;
+        font-size: 20px;
+        color: white;
+        margin-left: 1rem;
+    }
+
+}
+
+@media (max-width: 1000px){
+    .main-connected {
+        > div:nth-child(1) {
+            display: none;
+        }
+    }
+
+
+    .back-to-menu{
+        display: flex;
+        button, p {
+            display: block;
+        }
+
+    }
+
+    // html {
+    //     font-size: 10px;
+    // }
+    
+}
+
+

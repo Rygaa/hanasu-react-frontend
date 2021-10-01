@@ -1,0 +1,69 @@
+@mixin logo--font {
+    /* Hanasu */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 2.5rem;
+    line-height: 47px;
+    letter-spacing: 0.13em;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin title--font {
+    /* Login Title */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 2.2rem;
+    line-height: 41px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin placehoder--font {
+
+}
+
+@mixin button--font {
+    /* Confirm */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 35px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin p--font {
+    /* Already have an account? Login */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25rem;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.58);
+    margin: 0;
+    padding: 0;
+}
+
+
+@mixin navElement--font {
+    /* Leave */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25rem;
+    line-height: 23px;
+    letter-spacing: 0.08em;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}

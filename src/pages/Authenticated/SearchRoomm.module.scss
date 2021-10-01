@@ -1,0 +1,157 @@
+
+
+@import "../../scss/fonts.scss";
+
+.search-room {
+    grid-column: 3 / 4;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(222, 237, 255, 0.08);
+    border-radius: 14px;
+    height: 60vh;
+    width: 30rem;
+}
+
+.search-room > p:nth-child(1) {
+    @include title--font;
+    margin: 13% 0% 10% 0%;
+}
+
+
+.search-room > form:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 3.6rem;
+        width: 90%;
+        margin: 0% 0% 8% 0%;
+
+        border: 2px solid #595E76;
+        border-radius: 25px;
+        img {
+            width: 35px;
+            height: 35px;
+            margin: 0% 5% 0% 4%;
+        }
+        input {
+            background-color: transparent;
+            border: none;
+            @include p--font;
+            color: white;
+            width: 70%;
+            height: 100%;
+        }
+        > input:focus-within {
+            outline: none;
+            background-color: transparent !important;
+        }
+    }
+    > div:focus-within {
+            border: 2px solid #838aaf;
+    }
+         
+}
+
+
+.search-room {
+    > div:nth-child(3) {
+        overflow-y: scroll;
+        height: 60%;
+        width: 75%;
+        margin-bottom: 10%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    > div:nth-child(3)::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
+
+
+
+
+@media (max-width: 1000px){
+    .search-room {
+        grid-row: 1 / 2;
+        grid-column: 1 / 4;
+        width: 50rem;
+    }
+
+    .search-room > form:nth-child(2) {
+        > div {
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+  
+    }
+
+    #blur {
+        filter: blur(3px);
+    }
+}
+
+@media (max-width: 650px){
+    .search-room {
+        grid-row: 1 / 2;
+        grid-column: 1 / 4;
+
+        width: 30rem;
+    }
+
+    .search-room > form:nth-child(2) {
+        > div {
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+  
+    }
+
+    #blur {
+        filter: blur(3px);
+    }
+  
+}
+
+
+
+@media (max-width: 400px){
+    .search-room {
+        grid-row: 1 / 2;
+        grid-column: 1 / 4;
+
+        width: 30rem;
+    }
+
+    .search-room > form:nth-child(2) {
+        > div {
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+  
+    }
+
+    #blur {
+        filter: blur(3px);
+    }
+
+  
+}
+

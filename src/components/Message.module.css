@@ -1,0 +1,22 @@
+.message-him {
+  background-color: #252947;
+  padding: 1rem 1rem;
+  margin-bottom: 5%;
+  margin-right: 50%;
+}
+
+.message-him > p:nth-child(1) {
+  color: white;
+}
+
+.message-me {
+  background-color: #4289F3;
+  padding: 1rem 1rem;
+  margin-bottom: 5%;
+  margin-left: 50%;
+}
+
+.message-me > p:nth-child(1) {
+  color: white;
+}
+/*# sourceMappingURL=Message.module.css.map */
