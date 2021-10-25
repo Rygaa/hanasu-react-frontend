@@ -91,12 +91,12 @@ const LeftHeader = (props) => {
                         <button>Show my rooms</button>
                     </NavLink>
                 </li>
-                <li>
+                {/*<li>
                     <img src={settingsImage}></img>
                     <NavLink to="/Settings" activeClassName={classes["activeLink"]} onClick={hide}>
                         <button>Settings</button>
-                    </NavLink>
-                </li>
+                </NavLink>
+                </li>*/}
                 <li>
                     <img src={logoutImage}></img>
                     <NavLink to="/login" activeClassName={classes["activeLink"]} onClick={hide}>
