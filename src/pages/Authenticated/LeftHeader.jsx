@@ -38,7 +38,7 @@ const LeftHeader = (props) => {
     useEffect(() => {
         if (profilePictureUpdated) {
             dispatch(userActions.setProfilePictureUpdated(false));
-            imgRef.current.src = `http://38.133.52.102:3005/profile-picture/${username}[` + Math.random();
+            imgRef.current.src = `http://localhost:3005/profile-picture/${username}[` + Math.random();
         }
     }, [profilePictureUpdated])
 

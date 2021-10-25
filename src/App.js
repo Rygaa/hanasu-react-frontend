@@ -14,7 +14,7 @@ import { userActions } from "./store/user-slice";
 import socketIOClient from "socket.io-client";
 import CreateRoom from "./pages/Authenticated/CreateRoom";
 import SearchRoom from "./pages/Authenticated/SearchRoom";
-export const socket = socketIOClient('ws://38.133.52.102:3005');
+export const socket = socketIOClient('ws://localhost:3005');
 
 function App() {
   const dispatch = useDispatch();

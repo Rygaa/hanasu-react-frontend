@@ -6,7 +6,7 @@ import { notificationActions } from "./notification-slice"
 
 export const signUp = ({username, password, email}) => {
     return async (dispatch) => {
-        const response = await axios.post('http://38.133.52.102:3005/signUp', {
+        const response = await axios.post('http://localhost:3005/signUp', {
             username,
             password,
             email
@@ -25,7 +25,7 @@ export const signUp = ({username, password, email}) => {
 
 export const login = ({ username, password }) => {
     return async (dispatch) => {
-        const response = await axios.post('http://38.133.52.102:3005/login', {
+        const response = await axios.post('http://localhost:3005/login', {
             username,
             password,
         })
@@ -54,7 +54,7 @@ export const updateProfilePicture = ({ idToken, picture }) => {
         const formData = new FormData();
         formData.append("files", picture);
         formData.append("idToken", idToken);
-        const response = await axios.post('http://38.133.52.102:3005/updateProfilePhoto', formData)
+        const response = await axios.post('http://localhost:3005/updateProfilePhoto', formData)
         const data = response.data
         if (data.error) {
             console.log(data.error);
@@ -68,7 +68,7 @@ export const updateProfilePicture = ({ idToken, picture }) => {
 }
 export const checkIdToken = ({ idToken }) => {
     return async (dispatch) => {
-        const response = await axios.post('http://38.133.52.102:3005/checkIdToken', {
+        const response = await axios.post('http://localhost:3005/checkIdToken', {
             idToken,
         })
 
