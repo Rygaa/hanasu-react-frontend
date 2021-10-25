@@ -5,7 +5,7 @@ import { socket } from '../App'
 
 export const search = ({ idToken, roomname }) => {
     return async (dispatch) => {
-        const response = await axios.post('http://localhost:3005/search', {
+        const response = await axios.post('https://api.hanasu.me/search', {
             idToken,
             roomname,
         })
@@ -16,16 +16,13 @@ export const search = ({ idToken, roomname }) => {
             return;
         }
         dispatch(roomsActions.setSearchedRooms(data.rooms))
-
-
-        
     };
 }
 
 
 export const join = ({ idToken }) => {
     return async (dispatch) => {
-        const response = await axios.post('http://localhost:3005/join', {
+        const response = await axios.post('https://api.hanasu.me/join', {
             idToken,
         })
         const data = response.data
@@ -43,7 +40,7 @@ export const join = ({ idToken }) => {
 
 export const subscribe = ({ idToken, roomname }) => {
     return async (dispatch) => {
-        const response = await axios.post('http://localhost:3005/subscribe', {
+        const response = await axios.post('https://api.hanasu.me/subscribe', {
             idToken,
             roomname,
         })
@@ -60,7 +57,7 @@ export const subscribe = ({ idToken, roomname }) => {
 
 export const unsubscribe = ({ idToken, roomname }) => {
     return async (dispatch) => {
-        const response = await axios.post('http://localhost:3005/unsubscribe', {
+        const response = await axios.post('https://api.hanasu.me/unsubscribe', {
             idToken,
             roomname,
         })
@@ -80,7 +77,7 @@ export const unsubscribe = ({ idToken, roomname }) => {
 export const create = ({ idToken, roomname, maxPlayersNumber }) => {
     return async (dispatch) => {
      
-        const response = await axios.post('http://localhost:3005/create', {
+        const response = await axios.post('https://api.hanasu.me/create', {
             idToken,
             roomname,
             maxPlayersNumber,

@@ -38,7 +38,7 @@ const LeftHeader = (props) => {
     useEffect(() => {
         if (profilePictureUpdated) {
             dispatch(userActions.setProfilePictureUpdated(false));
-            imgRef.current.src = `http://localhost:3005/profile-picture/${username}[` + Math.random();
+            imgRef.current.src = `https://api.hanasu.me/profile-picture/${username}[` + Math.random();
         }
     }, [profilePictureUpdated])
 
