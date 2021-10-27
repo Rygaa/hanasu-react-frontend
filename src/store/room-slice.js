@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { reduce } from "bluebird";
 
 const initialState = {
     searchedRooms: [],

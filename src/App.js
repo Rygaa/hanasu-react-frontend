@@ -24,7 +24,6 @@ export const socket = socketIOClient('ws://api.hanasu.me', {
 
 function App() {
   const dispatch = useDispatch();
-  const [test, setTest] = useState(0)
   const isConnected = useSelector((state) => state.user.isConnected);
   const messages = useSelector((state) => state.user.messages);
   // const roomname = useSelector((state) => state.user.roomname);
@@ -34,8 +33,7 @@ function App() {
 
   useEffect(() => {
     console.log('reloaded');
-    socket.emit('connection', 0)
-    console.log('connection emitted');
+
 
     socket.on('connected', (socketId) => {
       console.log('connected with server as socket:', socketId)
@@ -44,128 +42,120 @@ function App() {
 
   }, [])
 
-  // useEffect(() => {
-  //   setTest(test + 1)
-  //   console.log(test);
-  //   if (test == 3) {
+  useEffect(() => {
+    socket.emit('connection', 0)
+    console.log('connection emitted');
 
-  //   }
-
- 
-
-  //   socket.on('joined', (data) => {
-  //     dispatch(userActions.setInRoom(true));
-  //     console.log(data);
-  //     dispatch(userActions.cleanMessages())
-  //   })
-  // }, [isConnected])
+    socket.on('joined', (data) => {
+      dispatch(userActions.setInRoom(true));
+      console.log(data);
+      dispatch(userActions.cleanMessages())
+    })
+  }, [isConnected])
 
  
 
-  // useEffect(() => {
-  //   if (idToken && idToken != 'null') {
-  //     dispatch(userActions.setToken(idToken));
-  //     dispatch(checkIdToken({ idToken }))
-  //   } else {
-  //     dispatch(userActions.setIsConnected(false));
-  //   }
+  useEffect(() => {
+    if (idToken && idToken != 'null') {
+      dispatch(userActions.setToken(idToken));
+      dispatch(checkIdToken({ idToken }))
+    } else {
+      dispatch(userActions.setIsConnected(false));
+    }
 
  
-  // }, [dispatch])
-  // if (isConnected === null) {
-  //   return <h1>Loading</h1>
-  // }
+  }, [dispatch])
+  if (isConnected === null) {
+    return <h1>Loading</h1>
+  }
 
 
-    return (
-      <div>hey</div>
-    )
-  // return (
-  //   <Layout>
-  //     <Switch>
-  //       <Route path='/' exact>
-  //         {!!isConnected && <Redirect to='/ShowMyRooms'></Redirect>}
-  //         {!isConnected && <Redirect to='/Login'></Redirect>}
-  //       </Route>
+  return (
+    <Layout>
+      <Switch>
+        <Route path='/' exact>
+          {!!isConnected && <Redirect to='/ShowMyRooms'></Redirect>}
+          {!isConnected && <Redirect to='/Login'></Redirect>}
+        </Route>
 
-  //       <Route path='/SignUp' exact>
-  //         {!!isConnected && <Redirect to='/ShowMyRooms'></Redirect>}
-  //           {!isConnected && <SignUp />}
-  //       </Route>
+        <Route path='/SignUp' exact>
+          {!!isConnected && <Redirect to='/ShowMyRooms'></Redirect>}
+            {!isConnected && <SignUp />}
+        </Route>
 
-  //       <Route path='/Login' exact>
-  //         {!!isConnected && <Redirect to='/ShowMyRooms'></Redirect>}
-  //           {!isConnected && <Login />}
-  //       </Route>
+        <Route path='/Login' exact>
+          {!!isConnected && <Redirect to='/ShowMyRooms'></Redirect>}
+            {!isConnected && <Login />}
+        </Route>
 
-  //       <Route path='/ShowMyRooms' exact >
-  //       {!!isConnected && 
-  //         <Fragment>
-  //           <LeftHeader></LeftHeader>
-  //           <ShowMyRooms></ShowMyRooms>
-  //         </Fragment>
-  //       }
+        <Route path='/ShowMyRooms' exact >
+        {!!isConnected && 
+          <Fragment>
+            <LeftHeader></LeftHeader>
+            <ShowMyRooms></ShowMyRooms>
+          </Fragment>
+        }
         
-  //       {!isConnected &&
-  //         <Fragment>
-  //           <Redirect to='/'></Redirect>
-  //         </Fragment>
-  //       }
+        {!isConnected &&
+          <Fragment>
+            <Redirect to='/'></Redirect>
+          </Fragment>
+        }
   
-  //       </Route>
-  //       <Route path={`/Room/:roomname`}>
-  //         {!!isConnected &&
-  //           <Fragment>
-  //             <LeftHeader></LeftHeader>
-  //             <RoomPage></RoomPage>
+        </Route>
+        <Route path={`/Room/:roomname`}>
+          {!!isConnected &&
+            <Fragment>
+              <LeftHeader></LeftHeader>
+              <RoomPage></RoomPage>
 
-  //           </Fragment>
-  //         }
+            </Fragment>
+          }
 
-  //         {!isConnected &&
-  //           <Fragment>
-  //             <Redirect to='/'></Redirect>
-  //           </Fragment>
-  //         }
+          {!isConnected &&
+            <Fragment>
+              <Redirect to='/'></Redirect>
+            </Fragment>
+          }
 
     
-  //       </Route>
+        </Route>
       
-  //       <Route path='/create' exact>
-  //         {!!isConnected &&
-  //           <Fragment>
-  //             <LeftHeader></LeftHeader>
-  //             <CreateRoom></CreateRoom>
+        <Route path='/create' exact>
+          {!!isConnected &&
+            <Fragment>
+              <LeftHeader></LeftHeader>
+              <CreateRoom></CreateRoom>
 
-  //           </Fragment>
-  //         }
+            </Fragment>
+          }
 
-  //         {!isConnected &&
-  //           <Fragment>
-  //             <Redirect to='/'></Redirect>
-  //           </Fragment>
-  //         }
-  //       </Route>
+          {!isConnected &&
+            <Fragment>
+              <Redirect to='/'></Redirect>
+            </Fragment>
+          }
+        </Route>
       
 
-  //       <Route path='/search' exact>
-  //         {!!isConnected &&
-  //           <Fragment>
-  //             <LeftHeader></LeftHeader>
-  //             <SearchRoom></SearchRoom>
+        <Route path='/search' exact>
+          {!!isConnected &&
+            <Fragment>
+              <LeftHeader></LeftHeader>
+              <SearchRoom></SearchRoom>
 
-  //           </Fragment>
-  //         }
+            </Fragment>
+          }
 
-  //         {!isConnected &&
-  //           <Fragment>
-  //             <Redirect to='/'></Redirect>
-  //           </Fragment>
-  //         }
-  //       </Route>
-  //       </Switch>
-  //   </Layout>
-  // );
+          {!isConnected &&
+            <Fragment>
+              <Redirect to='/'></Redirect>
+            </Fragment>
+          }
+        </Route>
+        </Switch>
+    </Layout>
+  );
 }
 
 export default App;
