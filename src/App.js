@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Redirect, Route, Switch, useHistory } from "react-router-dom";
 import Header from "./Layout/Header"
 import Layout from "./Layout/Layout"
@@ -24,17 +24,19 @@ export const socket = socketIOClient('ws://api.hanasu.me', {
 
 function App() {
   const dispatch = useDispatch();
+  const [test, setTest] = useState(0)
   const isConnected = useSelector((state) => state.user.isConnected);
   const messages = useSelector((state) => state.user.messages);
   // const roomname = useSelector((state) => state.user.roomname);
   const roomname = localStorage.getItem('roomname')
-
   const idToken = localStorage.getItem('idToken')
   const history = useHistory();
 
   useEffect(() => {
+    setTest(test + 1)
     socket.emit('connection', 0)
     console.log('connected');
+    console.log(test);
     socket.on('connected', (socketId) => {
       dispatch(userActions.setSocketId(socketId));
     })
