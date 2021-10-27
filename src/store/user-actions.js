@@ -4,10 +4,13 @@ import { userActions } from "./user-slice"
 import { socket } from '../App'
 import { notificationActions } from "./notification-slice"
 
-const url1 = `http://localhost:3005/signUp`
-const url2 = `http://localhost:3005/login`
-const url3 = `http://localhost:3005/updateProfilePhoto`
-const url4 = `http://localhost:3005/checkIdToken`
+const base = 'api.hanasu.me'
+// const base = 'localhost:3005'
+
+const url1 = `http://${base}/signUp`
+const url2 = `http://${base}/login`
+const url3 = `http://${base}/updateProfilePhoto`
+const url4 = `http://${base}/checkIdToken`
 
 export const signUp = ({username, password, email}) => {
     return async (dispatch) => {

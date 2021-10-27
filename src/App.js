@@ -14,9 +14,13 @@ import { userActions } from "./store/user-slice";
 import socketIOClient from "socket.io-client";
 import CreateRoom from "./pages/Authenticated/CreateRoom";
 import SearchRoom from "./pages/Authenticated/SearchRoom";
-export const socket = socketIOClient('ws://localhost:3005', {
-  path:'/socket.io'
+export const socket = socketIOClient('ws://api.hanasu.me', {
+  path:'/mysocket/'
 });
+// export const socket = socketIOClient('ws://localhost:3005', {
+//   path: '/mysocket/'
+// });
+
 
 function App() {
   const dispatch = useDispatch();
@@ -27,9 +31,11 @@ function App() {
 
   const idToken = localStorage.getItem('idToken')
   const history = useHistory();
-
   useEffect(() => {
     socket.emit('connection', 0)
+    console.log('connected');
+  }, [])
+  useEffect(() => {
     socket.on('connected', (socketId) => {
       dispatch(userActions.setSocketId(socketId));
     })
@@ -50,7 +56,6 @@ function App() {
     } else {
       dispatch(userActions.setIsConnected(false));
     }
-    socket.emit('connection', 0)
 
  
   }, [dispatch])

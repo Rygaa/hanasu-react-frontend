@@ -3,11 +3,14 @@ import { roomsActions } from "./room-slice"
 import { notificationActions } from "./notification-slice"
 import { socket } from '../App'
 
-const url1 = `http://localhost:3005/search`
-const url2 = `http://localhost:3005/join`
-const url3 = `http://localhost:3005/subscribe`
-const url4 = `http://localhost:3005/unsubscribe`
-const url5 = `http://localhost:3005/create`
+const base = 'api.hanasu.me'
+// const base = 'localhost:3005'
+
+const url1 = `http://${base}/search`
+const url2 = `http://${base}/join`
+const url3 = `http://${base}/subscribe`
+const url4 = `http://${base}/unsubscribe`
+const url5 = `http://${base}/create`
 
 export const search = ({ idToken, roomname }) => {
     return async (dispatch) => {
