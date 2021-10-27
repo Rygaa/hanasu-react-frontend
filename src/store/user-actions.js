@@ -4,9 +4,14 @@ import { userActions } from "./user-slice"
 import { socket } from '../App'
 import { notificationActions } from "./notification-slice"
 
+const url1 = `http://localhost:3005/signUp`
+const url2 = `http://localhost:3005/login`
+const url3 = `http://localhost:3005/updateProfilePhoto`
+const url4 = `http://localhost:3005/checkIdToken`
+
 export const signUp = ({username, password, email}) => {
     return async (dispatch) => {
-        const response = await axios.post('https://api.hanasu.me/signUp', {
+        const response = await axios.post(url1, {
             username,
             password,
             email
@@ -25,7 +30,7 @@ export const signUp = ({username, password, email}) => {
 
 export const login = ({ username, password }) => {
     return async (dispatch) => {
-        const response = await axios.post('https://api.hanasu.me/login', {
+        const response = await axios.post(url2, {
             username,
             password,
         })
@@ -54,7 +59,7 @@ export const updateProfilePicture = ({ idToken, picture }) => {
         const formData = new FormData();
         formData.append("files", picture);
         formData.append("idToken", idToken);
-        const response = await axios.post('https://api.hanasu.me/updateProfilePhoto', formData)
+        const response = await axios.post(url3, formData)
         const data = response.data
         if (data.error) {
             console.log(data.error);
@@ -68,7 +73,7 @@ export const updateProfilePicture = ({ idToken, picture }) => {
 }
 export const checkIdToken = ({ idToken }) => {
     return async (dispatch) => {
-        const response = await axios.post('https://api.hanasu.me/checkIdToken', {
+        const response = await axios.post(url4, {
             idToken,
         })
 

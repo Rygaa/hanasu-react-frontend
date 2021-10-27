@@ -14,6 +14,7 @@ import joinImage from "../../img/join.png"
 import settingsImage from "../../img/Settings.png"
 import logoutImage from "../../img/Logout.png"
 import leaveImage from "../../img/right arrow.png"
+const url5 = `http://localhost:3003/profile-picture`
 
 const LeftHeader = (props) => {
     const dispatch = useDispatch();
@@ -38,7 +39,7 @@ const LeftHeader = (props) => {
     useEffect(() => {
         if (profilePictureUpdated) {
             dispatch(userActions.setProfilePictureUpdated(false));
-            imgRef.current.src = `https://api.hanasu.me/profile-picture/${username}[` + Math.random();
+            imgRef.current.src = `${url5}/${username}[` + Math.random();
         }
     }, [profilePictureUpdated])
 

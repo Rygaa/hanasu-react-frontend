@@ -3,9 +3,15 @@ import { roomsActions } from "./room-slice"
 import { notificationActions } from "./notification-slice"
 import { socket } from '../App'
 
+const url1 = `http://localhost:3005/search`
+const url2 = `http://localhost:3005/join`
+const url3 = `http://localhost:3005/subscribe`
+const url4 = `http://localhost:3005/unsubscribe`
+const url5 = `http://localhost:3005/create`
+
 export const search = ({ idToken, roomname }) => {
     return async (dispatch) => {
-        const response = await axios.post('https://api.hanasu.me/search', {
+        const response = await axios.post(url1, {
             idToken,
             roomname,
         })
@@ -22,7 +28,7 @@ export const search = ({ idToken, roomname }) => {
 
 export const join = ({ idToken }) => {
     return async (dispatch) => {
-        const response = await axios.post('https://api.hanasu.me/join', {
+        const response = await axios.post(url2, {
             idToken,
         })
         const data = response.data
@@ -40,7 +46,7 @@ export const join = ({ idToken }) => {
 
 export const subscribe = ({ idToken, roomname }) => {
     return async (dispatch) => {
-        const response = await axios.post('https://api.hanasu.me/subscribe', {
+        const response = await axios.post(url3, {
             idToken,
             roomname,
         })
@@ -57,7 +63,7 @@ export const subscribe = ({ idToken, roomname }) => {
 
 export const unsubscribe = ({ idToken, roomname }) => {
     return async (dispatch) => {
-        const response = await axios.post('https://api.hanasu.me/unsubscribe', {
+        const response = await axios.post(url4, {
             idToken,
             roomname,
         })
@@ -77,7 +83,7 @@ export const unsubscribe = ({ idToken, roomname }) => {
 export const create = ({ idToken, roomname, maxPlayersNumber }) => {
     return async (dispatch) => {
      
-        const response = await axios.post('https://api.hanasu.me/create', {
+        const response = await axios.post(url5, {
             idToken,
             roomname,
             maxPlayersNumber,
