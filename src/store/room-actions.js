@@ -6,11 +6,11 @@ import { socket } from '../App'
 const base = 'api.hanasu.me'
 // const base = 'localhost:3005'
 
-const url1 = `http://${base}/search`
-const url2 = `http://${base}/join`
-const url3 = `http://${base}/subscribe`
-const url4 = `http://${base}/unsubscribe`
-const url5 = `http://${base}/create`
+const url1 = `https://${base}/search`
+const url2 = `https://${base}/join`
+const url3 = `https://${base}/subscribe`
+const url4 = `https://${base}/unsubscribe`
+const url5 = `https://${base}/create`
 
 export const search = ({ idToken, roomname }) => {
     return async (dispatch) => {

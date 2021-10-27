@@ -15,7 +15,7 @@ import settingsImage from "../../img/Settings.png"
 import logoutImage from "../../img/Logout.png"
 import leaveImage from "../../img/right arrow.png"
 // const url5 = `http://localhost:3005/profile-picture`
-const url5 = `http://api.hanasu.me/profile-picture`
+const url5 = `https://api.hanasu.me/profile-picture`
 
 const LeftHeader = (props) => {
     const dispatch = useDispatch();

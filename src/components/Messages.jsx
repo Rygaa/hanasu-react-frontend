@@ -8,7 +8,7 @@ import classes from './Message.module.scss'
 const Message = (props) => {
     const username = useSelector((state) => state.user.username)
     const profilePicture = useSelector((state) => state.user.profilePicture);
-    const x = `http://api.hanasu.me/profile-picture/${props.sender}`;
+    const x = `https://api.hanasu.me/profile-picture/${props.sender}`;
     // <img className={classes.profilePicture} src={`data:${profilePicture.type};base64,${Buffer.from(profilePicture.data).toString('base64')}`}></img>
 
     return (

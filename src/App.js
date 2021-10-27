@@ -14,7 +14,7 @@ import { userActions } from "./store/user-slice";
 import socketIOClient from "socket.io-client";
 import CreateRoom from "./pages/Authenticated/CreateRoom";
 import SearchRoom from "./pages/Authenticated/SearchRoom";
-export const socket = socketIOClient('ws://api.hanasu.me', {
+export const socket = socketIOClient('wss://api.hanasu.me', {
   path:'/mysocket/'
 });
 // export const socket = socketIOClient('ws://localhost:3005', {

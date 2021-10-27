@@ -7,10 +7,10 @@ import { notificationActions } from "./notification-slice"
 const base = 'api.hanasu.me'
 // const base = 'localhost:3005'
 
-const url1 = `http://${base}/signUp`
-const url2 = `http://${base}/login`
-const url3 = `http://${base}/updateProfilePhoto`
-const url4 = `http://${base}/checkIdToken`
+const url1 = `https://${base}/signUp`
+const url2 = `https://${base}/login`
+const url3 = `https://${base}/updateProfilePhoto`
+const url4 = `https://${base}/checkIdToken`
 
 export const signUp = ({username, password, email}) => {
     return async (dispatch) => {
