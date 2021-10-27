@@ -37,17 +37,17 @@ function App() {
 
   // }, [])
   console.log('reloaded');
+  socket.emit('connection', 0)
+  console.log('connection emitted');
+
+  socket.on('connected', (socketId) => {
+    console.log('connected with server as socket:', socketId)
+    dispatch(userActions.setSocketId(socketId));
+  })
   useEffect(() => {
     setTest(test + 1)
     console.log(test);
-    if (test == 4) {
-      socket.emit('connection', 0)
-      console.log('connection emitted');
-
-      socket.on('connected', (socketId) => {
-        console.log('connected with server as socket:', socketId)
-        dispatch(userActions.setSocketId(socketId));
-      })
+    if (test == 3) {
 
     }
 
