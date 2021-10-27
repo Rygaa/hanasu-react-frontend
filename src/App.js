@@ -34,9 +34,12 @@ function App() {
 
   useEffect(() => {
     setTest(test + 1)
-    socket.emit('connection', 0)
-    console.log('connected');
     console.log(test);
+    if (test == 1) {
+      socket.emit('connection', 0)
+      console.log('connection emitted');
+
+    }
     socket.on('connected', (socketId) => {
       dispatch(userActions.setSocketId(socketId));
     })
