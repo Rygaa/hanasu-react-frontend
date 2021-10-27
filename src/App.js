@@ -77,92 +77,95 @@ function App() {
   // }
 
 
-  return (
-    <Layout>
-      <Switch>
-        <Route path='/' exact>
-          {!!isConnected && <Redirect to='/ShowMyRooms'></Redirect>}
-          {!isConnected && <Redirect to='/Login'></Redirect>}
-        </Route>
+    return (
+      <div>hey</div>
+    )
+  // return (
+  //   <Layout>
+  //     <Switch>
+  //       <Route path='/' exact>
+  //         {!!isConnected && <Redirect to='/ShowMyRooms'></Redirect>}
+  //         {!isConnected && <Redirect to='/Login'></Redirect>}
+  //       </Route>
 
-        <Route path='/SignUp' exact>
-          {!!isConnected && <Redirect to='/ShowMyRooms'></Redirect>}
-            {!isConnected && <SignUp />}
-        </Route>
+  //       <Route path='/SignUp' exact>
+  //         {!!isConnected && <Redirect to='/ShowMyRooms'></Redirect>}
+  //           {!isConnected && <SignUp />}
+  //       </Route>
 
-        <Route path='/Login' exact>
-          {!!isConnected && <Redirect to='/ShowMyRooms'></Redirect>}
-            {!isConnected && <Login />}
-        </Route>
+  //       <Route path='/Login' exact>
+  //         {!!isConnected && <Redirect to='/ShowMyRooms'></Redirect>}
+  //           {!isConnected && <Login />}
+  //       </Route>
 
-        <Route path='/ShowMyRooms' exact >
-        {!!isConnected && 
-          <Fragment>
-            <LeftHeader></LeftHeader>
-            <ShowMyRooms></ShowMyRooms>
-          </Fragment>
-        }
+  //       <Route path='/ShowMyRooms' exact >
+  //       {!!isConnected && 
+  //         <Fragment>
+  //           <LeftHeader></LeftHeader>
+  //           <ShowMyRooms></ShowMyRooms>
+  //         </Fragment>
+  //       }
         
-        {!isConnected &&
-          <Fragment>
-            <Redirect to='/'></Redirect>
-          </Fragment>
-        }
+  //       {!isConnected &&
+  //         <Fragment>
+  //           <Redirect to='/'></Redirect>
+  //         </Fragment>
+  //       }
   
-        </Route>
-        <Route path={`/Room/:roomname`}>
-          {!!isConnected &&
-            <Fragment>
-              <LeftHeader></LeftHeader>
-              <RoomPage></RoomPage>
+  //       </Route>
+  //       <Route path={`/Room/:roomname`}>
+  //         {!!isConnected &&
+  //           <Fragment>
+  //             <LeftHeader></LeftHeader>
+  //             <RoomPage></RoomPage>
 
-            </Fragment>
-          }
+  //           </Fragment>
+  //         }
 
-          {!isConnected &&
-            <Fragment>
-              <Redirect to='/'></Redirect>
-            </Fragment>
-          }
+  //         {!isConnected &&
+  //           <Fragment>
+  //             <Redirect to='/'></Redirect>
+  //           </Fragment>
+  //         }
 
     
-        </Route>
+  //       </Route>
       
-        <Route path='/create' exact>
-          {!!isConnected &&
-            <Fragment>
-              <LeftHeader></LeftHeader>
-              <CreateRoom></CreateRoom>
+  //       <Route path='/create' exact>
+  //         {!!isConnected &&
+  //           <Fragment>
+  //             <LeftHeader></LeftHeader>
+  //             <CreateRoom></CreateRoom>
 
-            </Fragment>
-          }
+  //           </Fragment>
+  //         }
 
-          {!isConnected &&
-            <Fragment>
-              <Redirect to='/'></Redirect>
-            </Fragment>
-          }
-        </Route>
+  //         {!isConnected &&
+  //           <Fragment>
+  //             <Redirect to='/'></Redirect>
+  //           </Fragment>
+  //         }
+  //       </Route>
       
 
-        <Route path='/search' exact>
-          {!!isConnected &&
-            <Fragment>
-              <LeftHeader></LeftHeader>
-              <SearchRoom></SearchRoom>
+  //       <Route path='/search' exact>
+  //         {!!isConnected &&
+  //           <Fragment>
+  //             <LeftHeader></LeftHeader>
+  //             <SearchRoom></SearchRoom>
 
-            </Fragment>
-          }
+  //           </Fragment>
+  //         }
 
-          {!isConnected &&
-            <Fragment>
-              <Redirect to='/'></Redirect>
-            </Fragment>
-          }
-        </Route>
-        </Switch>
-    </Layout>
-  );
+  //         {!isConnected &&
+  //           <Fragment>
+  //             <Redirect to='/'></Redirect>
+  //           </Fragment>
+  //         }
+  //       </Route>
+  //       </Switch>
+  //   </Layout>
+  // );
 }
 
 export default App;
