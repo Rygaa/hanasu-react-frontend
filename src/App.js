@@ -31,11 +31,10 @@ function App() {
 
   const idToken = localStorage.getItem('idToken')
   const history = useHistory();
+
   useEffect(() => {
     socket.emit('connection', 0)
     console.log('connected');
-  }, [])
-  useEffect(() => {
     socket.on('connected', (socketId) => {
       dispatch(userActions.setSocketId(socketId));
     })
