@@ -32,25 +32,26 @@ function App() {
   const idToken = localStorage.getItem('idToken')
   const history = useHistory();
 
-  useEffect(() => {
-    socket.emit('connection', 0)
-    console.log('connection emitted');
+  // useEffect(() => {
+ 
 
-    socket.on('connected', (socketId) => {
-      console.log('connected with server as socket:', socketId)
-      dispatch(userActions.setSocketId(socketId));
-    })
-
-  }, [])
+  // }, [])
 
   useEffect(() => {
-    // setTest(test + 1)
-    // console.log(test);
-    // if (test == 1) {
-    //   socket.emit('connection', 0)
-    //   console.log('connection emitted');
+    setTest(test + 1)
+    console.log(test);
+    if (test == 1) {
+      socket.emit('connection', 0)
+      console.log('connection emitted');
 
-    // }
+      socket.on('connected', (socketId) => {
+        console.log('connected with server as socket:', socketId)
+        dispatch(userActions.setSocketId(socketId));
+      })
+
+    }
+
+ 
 
     socket.on('joined', (data) => {
       dispatch(userActions.setInRoom(true));
