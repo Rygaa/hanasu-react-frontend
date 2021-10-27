@@ -36,7 +36,7 @@ function App() {
  
 
   // }, [])
-
+  console.log('reloaded');
   useEffect(() => {
     setTest(test + 1)
     console.log(test);
