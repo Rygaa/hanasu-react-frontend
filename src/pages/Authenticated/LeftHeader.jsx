@@ -6,7 +6,8 @@ import { login, updateProfilePicture } from "../../store/user-actions"
 import { userActions } from "../../store/user-slice"
 import { uiActions } from "../../store/ui-slice"
 
-import classes from "./LeftHeader.module.scss"
+import classes from "assets/6-pages/Authenticated/LeftHeader.module.scss"
+
 import logo from "../../img/logo.png"
 import searchImage from "../../img/search.png"
 import createImage from "../../img/create.png"

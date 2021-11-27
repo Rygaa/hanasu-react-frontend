@@ -4,7 +4,8 @@ import { NavLink } from "react-router-dom"
 import { userActions } from "../store/user-slice";
 import { uiActions } from "../store/ui-slice";
 import Header from "./Header"
-import classes from "./Layout.module.scss";
+import classes from "assets/4-layout/Layout.module.scss"
+
 import Notification from "./Notification";
 const Layout = (props) => {
   const isConnected = useSelector((state) => state.user.isConnected);

@@ -1,4 +1,4 @@
-@import "../scss/fonts.scss";
+@import "../1-helpers/font.module.scss";
 
 html, body {
     min-width: 100%;
@@ -95,7 +95,7 @@ min-height: -webkit-fill-available;
         background-repeat: no-repeat;
         height: 30px;
         width: 30px;
-        background-image: url('../img/menu.png');
+        background-image: url('../../img/menu.png');
         background-size: contain;
         border: none;
         z-index: 10;

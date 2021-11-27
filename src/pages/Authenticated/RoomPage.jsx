@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { send } from "../../store/user-actions"
 import { userActions } from "../../store/user-slice"
 import {socket} from '../../App'
-import classes from './Room.module.scss'
+import classes from "assets/6-pages/Authenticated/Room.module.scss"
+
 import Message from "../../components/Messages"
 import { useHistory } from "react-router"
 const RoomPage = () => {

@@ -1,9 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
-import classes from "./Room.module.scss"
-import { login } from "../store/user-actions"
-import { subscribe, join, connect, unsubscribe } from "../store/room-actions"
+import classes from "assets/5-components/Room.module.scss"
+import { subscribe, unsubscribe } from "../store/room-actions"
 import { userActions } from "../store/user-slice"
-import { socket } from '../App'
 import { useHistory } from "react-router"
 
 const Room = (props) => {

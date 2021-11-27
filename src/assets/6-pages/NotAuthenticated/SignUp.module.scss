@@ -1,27 +1,25 @@
-@import "../../scss/fonts.scss";
+@import "../../1-helpers/font.module";
 
-.loginSection {
+.signUpSection {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.loginSection {
+.signUpSection {
     > div:nth-child(1) {
         display: flex;
         flex-direction: row;
-        margin: 5% 0% 3% 0%;
-        > img:nth-child(1) {
-        }
+         margin: 6rem 0% 6vh 0%;
+
         > p:nth-child(2) {
-            @include logo--font();
+            @include logo--font;
             align-self: center;
         }
     }
-}
 
-.loginSection {
-    > div:nth-child(2) {
+ > div:nth-child(2) {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -47,11 +45,12 @@
                 width: 100%;
                 padding: .25rem 0;
                 margin: 0% 0% 8% 0%;
-
+                height: 50px;
+                align-items: center;
                 > img {
                     margin: 0% 5% 0% 5%;
-                    width: 40px;
-                    height: 40px;
+                    width: 30px;
+                    height: 30px;
                 }
                 > input {
                     background-color: transparent;
@@ -74,7 +73,7 @@
                 border: 2px solid #838aaf;
             }
 
-            > button:nth-child(3) {
+            > button:nth-child(4) {
                 @include button--font();
                 border: none;
                 background: #4289F3;
@@ -87,33 +86,26 @@
 
         }
     }
-}
 
-.loginSection {
     > div:nth-child(3) {
         display: flex;
-        flex-direction: column;
-        width: 30rem;
-        > div {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin: 7% 0% 0% 2%;
-            
-            > p {
-                @include p--font();
-            }
-        
+        flex-direction: row;
+        justify-content: center;
+        margin: 2.4rem 0% 0% 0%;
+
+        > p:nth-child(1) {
+            @include p--font;
         }
         > button:nth-child(2) {
-            @include p--font();
-            color: rgba(0, 148, 255, 0.58);
+            @include p--font;
+            margin: 0% 0% 0% 1%;
             background-color: transparent;
             border: none;
-            margin: 0% 0% 0% 0%;
+            color: rgba(0, 148, 255, 0.58);
         }
     }
 }
+
 
 .navLink {
     margin: 0;
@@ -127,4 +119,29 @@
         margin: 0% 0% 3% 12%;
         width: 100%;
     }
+}
+
+@media (max-width: 530px){
+.signUpSection {
+
+
+      > div:nth-child(2) {
+            min-width: 20rem;
+            width: 90%;
+
+      }
+    }
+//  html {
+//         font-size: 10px;
+//     }
+}
+
+
+@media (orientation: portrait) and (min-height: 750px ) {
+    .signUpSection {
+        > div:nth-child(1) {
+            margin: 8rem 0% 6vh 0%;
+        }
+    }
+    
 }

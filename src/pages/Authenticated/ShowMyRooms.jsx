@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { join } from "../../store/room-actions"
 import { userActions } from "../../store/user-slice"
-import classes from "./ShowMyRooms.module.scss"
+import classes from "assets/6-pages/Authenticated/ShowMyRooms.module.scss"
 import { socket } from "../../App"
 import Room from "../../components/Room"
 const Join = (props) => {

@@ -1,4 +1,5 @@
-import classes from "./SearchRoom.module.scss"
+import classes from "assets/6-pages/Authenticated/SearchRoom.module.scss"
+
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { search } from "../../store/room-actions"

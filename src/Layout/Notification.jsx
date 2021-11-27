@@ -1,4 +1,4 @@
-import classes from "./Notification.module.scss"
+import classes from "assets/4-layout/Notification.module.scss"
 import {notificationActions } from "../store/notification-slice"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react"

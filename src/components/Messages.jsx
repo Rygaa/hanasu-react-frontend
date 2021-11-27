@@ -1,9 +1,5 @@
-import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { send } from "../store/user-actions"
-import { userActions } from "../store/user-slice"
-import { socket } from '../App'
-import classes from './Message.module.scss'
+import { useSelector } from "react-redux"
+import classes from 'assets/5-components/Message.module.scss'
 
 const Message = (props) => {
     const username = useSelector((state) => state.user.username)

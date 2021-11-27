@@ -1,4 +1,5 @@
-@import "../../scss/fonts.scss";
+@import "../../1-helpers/font.module";
+
 .show-my-rooms {
     > div::-webkit-scrollbar {
         display: none;

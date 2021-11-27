@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../../store/user-slice";
 import { signUp } from "../../store/user-actions";
-import classes from "./SignUp.module.scss"
+import classes from "assets/6-pages/NotAuthenticated/SignUp.module.scss"
 import emailImage from "../../img/email.png"
 import usernameImage from "../../img/username.png"
 import passwordImage from "../../img/password.png"

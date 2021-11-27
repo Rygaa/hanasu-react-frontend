@@ -1,4 +1,5 @@
-import classes from "./CreateRoom.module.scss"
+import classes from "assets/6-pages/Authenticated/CreateRoom.module.scss"
+
 import roomIdImage from "../../img/roomId.png"
 import maxPlayerImage from "../../img/maxPlayer.png"
 import { useState } from "react";

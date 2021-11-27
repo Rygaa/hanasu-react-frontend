@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom"
-import classes from "./Header.module.scss"
+import classes from "assets/4-layout/Header.module.scss"
+
 
 const Header = (props) => {
     const isConnected = useSelector((state) => state.user.isConnected);
