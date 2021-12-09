@@ -15,8 +15,10 @@ import joinImage from "../../img/join.png"
 import settingsImage from "../../img/Settings.png"
 import logoutImage from "../../img/Logout.png"
 import leaveImage from "../../img/right arrow.png"
+import leftArrow from "../../img/left arrow.png"
+import {url} from '../../_globalVar/_ip'
 // const url5 = `http://localhost:3005/profile-picture`
-const url5 = `https://api.hanasu.me/profile-picture`
+const url5 = `${url}/profile-picture`
 
 const LeftHeader = (props) => {
     const dispatch = useDispatch();
@@ -45,15 +47,13 @@ const LeftHeader = (props) => {
         }
     }, [profilePictureUpdated])
 
-    const imgInputOnClick = () => {
-        dispatch(updateProfilePicture({ idToken, picture: imgInputRef.current.files[0] }))
-    }
+
     const imgOnClick = () => {
         imgInputRef.current.click();
     }
 
     const hide = () => {
-        dispatch(uiActions.setShowMenu(!showMenu));
+        dispatch(uiActions.setShowMenu(false));
 
     }
     // {
@@ -70,10 +70,13 @@ const LeftHeader = (props) => {
                 <p>Hanasu</p>
             </div>
             <div>
-                <NavLink to={decodeURI(window.location.pathname) == `/room/${roomname}` ? "/showmyrooms" : `/Room/${roomname}`}>
+                <NavLink className={classes['nav-link']} to={decodeURI(window.location.pathname) == `/room/${roomname}` ? "/showmyrooms" : `/Room/${roomname}`}>
                     <button>{decodeURI(window.location.pathname) == `/room/${roomname}` ? 'Leave' : roomname}</button>
+                    <img 
+                        className={(decodeURI(window.location.pathname) == `/room/${roomname}` ? classes['left-arrow'] : classes['right-arrow'])}
+                        src={(decodeURI(window.location.pathname) == `/room/${roomname}` ? leftArrow : leaveImage)} 
+                    />
                 </NavLink>
-                <img src={leaveImage} />
             </div>
             <ul>
                 <li>
@@ -94,12 +97,12 @@ const LeftHeader = (props) => {
                         <button>Show my rooms</button>
                     </NavLink>
                 </li>
-                {/*<li>
+                {<li>
                     <img src={settingsImage}></img>
-                    <NavLink to="/Settings" activeClassName={classes["activeLink"]} onClick={hide}>
+                    <NavLink to="/settings" activeClassName={classes["activeLink"]} onClick={hide}>
                         <button>Settings</button>
                 </NavLink>
-                </li>*/}
+                </li>}
                 <li>
                     <img src={logoutImage}></img>
                     <NavLink to="/login" activeClassName={classes["activeLink"]} onClick={hide}>
@@ -108,8 +111,7 @@ const LeftHeader = (props) => {
                 </li>
             </ul>
             <div>
-                <img ref={imgRef} onClick={imgOnClick}></img>
-                <input type="file" type="file" ref={imgInputRef} onChange={imgInputOnClick} style={{ display: "none" }}></input>
+                <img ref={imgRef}></img>
                 <p>{username}</p>
             </div>
        

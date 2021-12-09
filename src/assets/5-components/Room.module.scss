@@ -1,76 +1,50 @@
-.div {
+@import "../../assets/1-helpers/font.module";
+
+.name { @include tempo-font(); }
+.players { @include tempo-font(); }
+.line {   
+    justify-self: center;
+    border-left: 2px solid #51577B;
+    height: 70%;
+    align-self: center;
+}
+.subscribe-button {
+    @include tempo-font();
+    background-color: #4B586C;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: .8rem;
+    color: #FFFFFF;
+    border: none;
+    height: 60%;
+    width: 90%;
+}
+.leave-button {
+    @include tempo-font();
+    background-color: transparent;
+    border: none;
+    margin-right: 1rem;
+    margin-left: .5rem;
+}
+
+
+.room-subscribe {
     margin-bottom: 5%;
     display: grid;
-    grid-template-columns: minmax(0, 6fr) minmax(0, 1fr) minmax(0, 6fr) minmax(0, 6fr) minmax(0, 2fr);
-    background-color: rgba(53, 59, 100, 0.78);
-    border-radius: 5px;
+    grid-template-columns: 1fr min-content 1fr 1fr auto;
+    border: 1px solid rgba(#fff, 20%);
+    border-radius: 10px;
     min-height: 4rem;
-    > p:nth-child(1) {
-        justify-self: center;
-        align-self: center;
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 1.2rem;
-        line-height: 16px;
-        letter-spacing: 0.05em;
-        color: #A5A4C2;
-        padding: 0;
-        margin: 0;
-    }
-
-    > div:nth-child(2) {
-        justify-self: center;
-
-        border-left: 2px solid #51577B;
-    }
-
-    > p:nth-child(3) {
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        align-self: center;
-
-        font-size: 1.2rem;
-        line-height: 16px;
-        letter-spacing: 0.05em;
-        color: #A5A4C2;
-        padding: 0;
-        margin: 0;
-        justify-self: center;
-
-    }
-
-    > button:nth-child(4) {
-        background: #4289F3;
-        border-radius: 5px;
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: bold;
-        font-size: .8rem;
-        line-height: 11px;
-        letter-spacing: 0.05em;
-        color: #FFFFFF;
-        border:none;
-        height: 60%;
-        align-self: center;
-        margin-right: 7.5%;
-        margin-left: 7.5%;
-    }
-      > button:nth-child(5) {
-        border: none;
-        align-self: center;
-        justify-self: center;
-        width: 1.5rem;
-        height: 1.5rem;
-        border-radius: 1rem;
-        background-color: transparent;
-        color: rgb(255, 255, 255);
-        font-family: Roboto;
-        font-weight: bold;
-        font-size: 1rem;
-        // box-shadow: 0px 0px 14px 4px rgba(0,0,0,0.1);
-        margin-right: 20%;
-    }
-
+    margin: 0 2.5rem;
+    margin-bottom: 5%;
+}
+.room-leave {
+    margin-bottom: 5%;
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr 1fr auto;
+    border: 1px solid rgba(#fff, 20%);
+    border-radius: 10px;
+    min-height: 4rem;
+    margin: 0 2.5rem;
+    margin-bottom: 5%;
 }

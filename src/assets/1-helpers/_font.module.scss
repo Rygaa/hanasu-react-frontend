@@ -67,3 +67,17 @@
     margin: 0;
     padding: 0;
 }
+
+@mixin tempo-font {
+    justify-self: center;
+    align-self: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    color: #A5A4C2;
+    padding: 0;
+    margin: 0;
+}

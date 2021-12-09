@@ -54,13 +54,13 @@ const Join = (props) => {
         setInputedRoomId(e.target.value)
     }
 
-    return <section className={classes['show-my-rooms']} id={(showMenu ? classes["blur"] : classes[""])}>
-        <p>{`My rooms`}</p>
-        <div>{arr}</div>
-        <p>...</p>
+    return <section className={classes['show-my-rooms-section']} id={(showMenu ? classes["blur"] : classes[""])}>
+        <p className={classes['title']}>{`My rooms`}</p>
+        <div className={classes['rooms-container']}>{arr}</div>
     </section>
     
     
 }
+// <p>...</p>
 
 export default Join;

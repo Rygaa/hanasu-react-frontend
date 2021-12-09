@@ -2,15 +2,15 @@ import axios from "axios"
 import { roomsActions } from "./room-slice"
 import { notificationActions } from "./notification-slice"
 import { socket } from '../App'
+import { url } from "_globalVar/_ip"
 
-const base = 'api.hanasu.me'
 // const base = 'localhost:3005'
 
-const url1 = `https://${base}/search`
-const url2 = `https://${base}/join`
-const url3 = `https://${base}/subscribe`
-const url4 = `https://${base}/unsubscribe`
-const url5 = `https://${base}/create`
+const url1 = `${url}/search`
+const url2 = `${url}/join`
+const url3 = `${url}/subscribe`
+const url4 = `${url}/unsubscribe`
+const url5 = `${url}/create`
 
 export const search = ({ idToken, roomname }) => {
     return async (dispatch) => {

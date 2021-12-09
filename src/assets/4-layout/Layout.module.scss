@@ -1,113 +1,43 @@
-@import "../1-helpers/font.module.scss";
+html, body, #root, .layout, .App { height: 100%;}
 
-html, body {
-    min-width: 100%;
-    min-height: 100%;
-    margin: 0;
-    overflow: auto;
-}
+button { -webkit-appearance: none;}
 
-html, body, #root, .App {
-  height: 100%;
-}
-
-button {
-    -webkit-appearance: none;
-}
-
-.layout-disconnected {
-    display: flex;
-    background-color: #202541;
+.layout {
     display: grid;
-    grid-template-columns: 1fr;
-    height: 100%;
-}
-
-.layout-connected {
-    display: flex;
     background-color: #202541;
-    display: grid;
-    grid-template-columns: 1fr;
-    height: 100%;
-    max-height: -webkit-fill-available;
-
-}
-
-.layout-connected {
-
-
-
 }
 
 .main-disconnected {
     display: grid;
     grid-template-columns: 1fr;
-    height: 100%;
-
 }
 
 .main-connected {
-    grid-column: 1 / 3;
     display: grid;
-    grid-template-columns: 1fr minmax(0, auto) 5fr;
-    height: 100%;
-    max-height: -webkit-fill-available;
-min-height: -webkit-fill-available;
-    > div:nth-child(1) {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-        /* Line 21 */
-        border-left: 3px solid #2C3044;
-        margin-left: 1rem;
-        height: 70%;
-        align-self: center;
-    }
-
-}
-
-.layout-connected {
-    > div:nth-child(3) {
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-    }
+    grid-template-columns: min-content auto;
 }
 
 .hide-div {
     height: 100%;
     width: 100%;
     position: absolute;
-    // max-height: -webkit-fill-available;
 }
 
 .back-to-menu {
+    position: absolute;
     margin-top: .8rem;
     margin-left: 1rem;
     z-index: 10;
+    color: red;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    background-image: url('../../img/menu.png');
+    background-size: contain;
+    border: none;
+    z-index: 10;
     display: none;
-    button {
-        display: none;
-        left: 500px;
-        color: red;
-        background-color: transparent;
-        background-repeat: no-repeat;
-        height: 30px;
-        width: 30px;
-        background-image: url('../../img/menu.png');
-        background-size: contain;
-        border: none;
-        z-index: 10;
-    }
-    p {
-        display: none;
-        @include p--font;
-        font-size: 20px;
-        color: white;
-        margin-left: 1rem;
-    }
-
 }
 
 @media (max-width: 1000px){
@@ -116,20 +46,27 @@ min-height: -webkit-fill-available;
             display: none;
         }
     }
-
-
     .back-to-menu{
         display: flex;
-        button, p {
-            display: block;
-        }
-
     }
 
-    // html {
-    //     font-size: 10px;
-    // }
-    
+    .main-connected {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+        
 }
 
+@media (max-width: 1200px)  { html { font-size: 14px;}}
+@media (max-width: 1050px)  { html { font-size: 13px;}}
+@media (max-width: 950px)   { html { font-size: 12px;}}
+@media (max-width: 600px)   { html { font-size: 11px;}}
+@media (max-width: 400px)   { html { font-size: 10px;}}
+
+@media (max-height: 800px) and (min-width: 1200px)  { html { font-size: 14px;}}
+@media (max-height: 750px) and (min-width: 1050px)  { html { font-size: 13px;}}
+@media (max-height: 700px) and (min-width: 950px)   { html { font-size: 12px;}}
+@media (max-height: 650px) and (min-width: 600px)   { html { font-size: 11px;}}
+@media (max-height: 600px) and (min-width: 400px)   { html { font-size: 10px;}}
+@media (max-height: 600px) and (min-width: 400px)   { html { font-size: 9px;}}
 

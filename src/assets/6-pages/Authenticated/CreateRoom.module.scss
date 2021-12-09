@@ -7,9 +7,7 @@
     align-items: center;
     justify-self: center;
     align-self: center;
-    grid-column: 3 / 4;
     width: 35rem;
-
 }
 
 .create-room {
@@ -17,12 +15,11 @@
     flex-direction: column;
     align-items: center;
     background-color: rgba(222, 237, 255, 0.08);
-    border-radius: 14px;
-
+    border-radius: 10px;
 
     > p:nth-child(1) {
         @include title--font;
-        margin: 13% 0% 10% 0%;
+        margin: 4.5rem 0% 10% 0%;
     }
 
     > form:nth-child(2) {
@@ -38,10 +35,10 @@
             align-items: center;
             height: 3.6rem;
             width: 90%;
-            margin: 0% 0% 8% 0%;
+            margin: 0% 0% 2rem 0%;
 
             border: 2px solid #595E76;
-            border-radius: 25px;
+            border-radius: 10px;
             img {
                 width: 2rem;
                 height: 2rem;
@@ -70,40 +67,39 @@
             align-self: center;
             width: 90%;
             padding: .75rem 0;
-            margin: 7% 0% 8% 0%;
-
+            margin: 2rem 0% 2.5rem 0%;
         }
     }
 }
 
 
-@media (max-width: 1000px){
-    .create-room {
-        grid-row: 1 / 2;
-        grid-column: 1 / 4;
-        width: 70%;
-    }
+// @media (max-width: 1000px){
+//     .create-room {
+//         grid-row: 1 / 2;
+//         grid-column: 1 / 4;
+//         width: 70%;
+//     }
 
-    #blur {
-        filter: blur(3px);
-    }
+//     #blur {
+//         filter: blur(3px);
+//     }
 
-    html {
-        font-size: 14px;
-    }
-}
+//     html {
+//         font-size: 14px;
+//     }
+// }
 
-@media (max-width: 650px){
-    html {
-        font-size: 12px;
-    }
+// @media (max-width: 650px){
+//     html {
+//         font-size: 12px;
+//     }
   
-}
+// }
 
 
 
-@media (max-width: 400px){
-    html {
-        font-size: 10px;
-    }
-}
+// @media (max-width: 400px){
+//     html {
+//         font-size: 10px;
+//     }
+// }

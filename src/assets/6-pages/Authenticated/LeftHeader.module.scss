@@ -2,7 +2,7 @@
 
 
 .menu {
-    grid-row: 1 / 2;
+    // grid-row: 1 / 2;
     display: grid;
     grid-template-rows: minmax(0, auto) minmax(0, auto) 2fr minmax(0, auto);
     background: linear-gradient(0deg, rgba(44, 48, 68, 0.22), rgba(44, 48, 68, 0.22));
@@ -31,14 +31,33 @@
     align-self: flex-end;
     justify-self: flex-end;
     align-items: center;
-    button {
-        @include navElement--font();
-        background-color: transparent;
-        border: none;
+    height: 3rem;
+    .nav-link {
+        display: flex;
+        grid: 4rem;
+        text-decoration: none;
+
+        button {
+            @include navElement--font();
+            background-color: transparent;
+            border: none;
+        }
+        img {
+            margin: 0% 1.5rem 0% 1.5rem;
+            width: 2.5rem;
+            transition: .15s;
+
+        }
     }
-    img {
-        margin: 0% 1.5rem 0% .5rem;
-        width: 2.5rem;
+
+}
+.menu > div:nth-child(2):hover {
+    .right-arrow{
+        transform: translateX(5px);
+    }
+    .left-arrow{
+        transform: translateX(-5px);
+
     }
 }
 
@@ -113,19 +132,20 @@
     
 }
 
-
+.nav-link:hover {
+    img {
+    }
+}
 @media (max-width: 1000px){
     .menu {
         grid-row: 1 / 2;
         display: grid;
         grid-template-rows: minmax(0, auto) minmax(0, auto) 2fr minmax(0, auto);
-        background: linear-gradient(0deg, rgba(44, 48, 68, .8), rgba(44, 48, 68, .9));
+        // background: linear-gradient(0deg, rgba(44, 48, 68, .8), rgba(44, 48, 68, .9));
 
         position: absolute;
         height: 100vh;
-        max-height: 100vh;
-        height: calc(var(--vh, 1vh) * 100);
-        max-height: -webkit-fill-available;
+     
         z-index: 5;
     }
         #hidden {

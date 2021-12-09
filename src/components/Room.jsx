@@ -28,15 +28,14 @@ const Room = (props) => {
     }
 
     return (
-        <div className={classes.div}>
-            <p>{props.roomname}</p>
-            <div></div>
-            <p>{props.playersNumber}/{props.maxPlayersNumber}</p>
-            <button onClick={props.status == "Subscribe" ? subscribeOnClick : joinOnClick}>{props.status}</button>
+        <div className={(props.status == "Subscribe" ? classes['room-subscribe'] : classes['room-leave'])}>
+            <p className={classes['name']}>{props.roomname}</p>
+            <div className={classes['line']} />
+            <p className={classes['players']}>{props.playersNumber}/{props.maxPlayersNumber}</p>
+            <button className={classes['subscribe-button']} onClick={props.status == "Subscribe" ? subscribeOnClick : joinOnClick}>{props.status}</button>
             {props.status != "Subscribe" &&
-                <button onClick={unsubscribeOnClick}>X</button>
+                <button className={classes['leave-button']} onClick={unsubscribeOnClick}>X</button>
             }
-            
         </div>
     )
 }

@@ -2,7 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     username: '',
+    email: '',
     idToken: '',
+    settingsSaved: false,
     isConnected: null,
     socketId: '',
     roomname: '',
@@ -21,12 +23,18 @@ const userSlice = createSlice({
         setUsername: (state, { payload: username }) => {
             state.username = username;
         },
+        setEmail: (state, { payload: email }) => {
+            state.email = email;
+        },
         setIsConnected: (state, { payload: status }) => {
             state.isConnected = status;
         },
         setToken: (state, {payload: idToken}) => {
             state.idToken = idToken;
             localStorage.setItem('idToken', idToken)
+        },
+        setSettingsSaved: (state, { payload: settingsSaved }) => {
+            state.settingsSaved = settingsSaved;
         },
         setSocketId: (state, { payload: socketId }) => {
             state.socketId = socketId;

@@ -8,7 +8,6 @@ button {
 
 }
 .roomSection {
-    grid-column: 3 / 4;
     display: grid;
     grid-template-rows: minmax(0, 1fr) minmax(0, 5fr) minmax(0, 1fr);
     max-height: 100vh;

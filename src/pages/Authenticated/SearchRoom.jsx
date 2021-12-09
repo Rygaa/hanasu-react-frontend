@@ -54,13 +54,11 @@ const SearchRoom = () => {
     return (
         <section className={classes['search-room']} id={(showMenu ? classes["blur"] : classes[""])}>
             <p>Search</p>
-            <form>
-                <div>
-                    <img src={roomIdImage} />
-                    <input name='inputedRoomId' value={inputedRoomId} onChange={onChangeRoom} placeholder="room name" autoComplete="off" />
-                </div>
-            </form>
-            <div>{displayedRooms}</div>
+            <div className={classes['search-input-div']}>
+                <img src={roomIdImage} />
+                <input name='inputedRoomId' value={inputedRoomId} onChange={onChangeRoom} placeholder="room name" autoComplete="off" />
+            </div>
+            <div className={classes['result-container']}>{displayedRooms}</div>
         </section>
     )
 }

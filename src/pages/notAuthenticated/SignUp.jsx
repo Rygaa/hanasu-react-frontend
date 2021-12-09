@@ -36,34 +36,32 @@ const SignUp = () => {
     }
     
     return (
-        <section className={classes.signUpSection}>
-            <div>
+        <section className={classes['sign-up-section']}>
+            <div className={classes['logo']}>
                 <img src={logo} />
                 <p>Hanasu</p>
             </div>
-            <div>
+            <div className={classes['sign-up-container']}>
                 <p>Create your account</p>
                 <form onSubmit={onSubmitHandler}>
-                    <div>
+                    <div className={classes['div-inputs']}>
                         <img src={usernameImage} />
                         <input name='username' value={username} onChange={onChangeUsername} placeholder="username" autoComplete="off" />
                     </div>
-                    <div>
+                    <div className={classes['div-inputs']}>
                         <img src={emailImage} />
                         <input name='email' value={email} onChange={onChangeEmail} placeholder="email" autoComplete="off" />
                     </div>
-                    <div>
+                    <div className={classes['div-inputs']}>
                         <img src={passwordImage} />
                         <input name='password' value={password} onChange={onChangePassword} placeholder="password" type="password" />
                     </div>
                     <button>Confirm</button>
                 </form>
             </div>
-            <div>
+            <div className={classes['sign-up-container-bottom']}>
                 <p>Already have an account?</p>
-                <NavLink to="/login" className={classes.navLink}>
-                    <button>Login</button>
-                </NavLink>
+                <NavLink to="/login" className={classes['nav-link']}><button>Login</button></NavLink>
             </div>
         </section>
  

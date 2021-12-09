@@ -1,117 +1,87 @@
 @import "../../1-helpers/font.module";
 
-.signUpSection {
+.sign-up-section {
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
-
-.signUpSection {
-    > div:nth-child(1) {
-        display: flex;
-        flex-direction: row;
-         margin: 6rem 0% 6vh 0%;
-
-        > p:nth-child(2) {
-            @include logo--font;
-            align-self: center;
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4.5rem;
+    > img {
+        width: 4.5rem;
     }
-
- > div:nth-child(2) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-width: 30rem;
-        width: 30%;
-        background-color: rgba(222, 237, 255, 0.08);
-        border-radius: 15px;
-        > p:nth-child(1) {
-            @include title--font();
-            margin: 15% 0% 10% 0%;
-        }
-        > form:nth-child(2) {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 80%;
-            > div {
-                display: flex;
-                flex-direction: row;
-                border: 2px solid #595E76;
-                border-radius: 25px;
-                background-color: transparent;
-                width: 100%;
-                padding: .25rem 0;
-                margin: 0% 0% 8% 0%;
-                height: 50px;
-                align-items: center;
-                > img {
-                    margin: 0% 5% 0% 5%;
-                    width: 30px;
-                    height: 30px;
-                }
-                > input {
-                    background-color: transparent;
-                    border: none;
-                    width: 70%;
-                    @include p--font;
-                    font-size: 15px;
-                    color: white;
-
-                }
-                > input:focus-within {
-                    outline: none;
-                    background-color: transparent !important;
-                }
-
-         
-            }
-
-            > div:focus-within {
-                border: 2px solid #838aaf;
-            }
-
-            > button:nth-child(4) {
-                @include button--font();
-                border: none;
-                background: #4289F3;
-                border-radius: 10px;
-                align-self: center;
-                width: 100%;
-                padding: .75rem 0;
-                margin: 10% 0% 9% 0%;
-            }
-
-        }
+    > p {
+        @include logo--font();
+        align-self: center;
     }
+}
+.sign-up-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3.5rem;
+    background: rgba(222, 237, 255, 0.08);
+    border-radius: 10px;
+    margin-bottom: 2.5rem;
 
-    > div:nth-child(3) {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin: 2.4rem 0% 0% 0%;
-
-        > p:nth-child(1) {
-            @include p--font;
-        }
-        > button:nth-child(2) {
-            @include p--font;
-            margin: 0% 0% 0% 1%;
-            background-color: transparent;
+    > p {
+        @include title--font();
+        margin: 15% 0% 10% 0%;
+    }
+    > form {
+        > button {
+            @include button--font();
             border: none;
-            color: rgba(0, 148, 255, 0.58);
+            background: #4289F3;
+            border-radius: 10px;
+            align-self: center;
+            width: 100%;
+            padding: .75rem 0;
+            margin: 3% 0% 9% 0%;
         }
     }
 }
 
-
-.navLink {
-    margin: 0;
-    padding: 0;
-
-    > button {
+.div-inputs {
+    display: flex;
+    align-items: center;
+    border: 2px solid rgba(222, 237, 255, 0.1);
+    border-radius: 10px;
+    background-color: transparent;
+    margin-bottom: 8%;
+    height: 50px;
+    > img {
+        margin: 0% 5% 0% 5%;
+        width: 30px;
+        height: 30px;
+    }
+    > input {
+        background-color: transparent;
+        border: none;
+        @include p--font;
+        font-size: 15px;
+        color: white;
+        height: 100%;
+        width: 70%;
+    }
+    > input:focus-within {
+        outline: none;
+        background-color: transparent !important;
+    }
+}
+.div-inputs:focus-within {
+    // outline: 1px solid red;
+    border: 1px solid rgba(222, 237, 255, 0.35);
+}
+.sign-up-container-bottom {
+    display: flex;
+    > p {
+        @include p--font();
+    }
+    .nav-link > button {
         @include p--font();
         color: rgba(0, 148, 255, 0.58);
         background-color: transparent;
@@ -119,29 +89,4 @@
         margin: 0% 0% 3% 12%;
         width: 100%;
     }
-}
-
-@media (max-width: 530px){
-.signUpSection {
-
-
-      > div:nth-child(2) {
-            min-width: 20rem;
-            width: 90%;
-
-      }
-    }
-//  html {
-//         font-size: 10px;
-//     }
-}
-
-
-@media (orientation: portrait) and (min-height: 750px ) {
-    .signUpSection {
-        > div:nth-child(1) {
-            margin: 8rem 0% 6vh 0%;
-        }
-    }
-    
 }

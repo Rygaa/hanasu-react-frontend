@@ -15,6 +15,8 @@ import socketIOClient from "socket.io-client";
 import CreateRoom from "./pages/Authenticated/CreateRoom";
 import SearchRoom from "./pages/Authenticated/SearchRoom";
 import { url } from "./_globalVar/_ip"
+import Responsive from "Layout/Responsive";
+import Settings from "pages/Authenticated/Settings";
 export const socket = socketIOClient(`${url}`, {
   path:'/mysocket/'
 });
@@ -31,6 +33,8 @@ function App() {
   const roomname = localStorage.getItem('roomname')
   const idToken = localStorage.getItem('idToken')
   const history = useHistory();
+
+
 
   useEffect(() => {
     console.log('reloaded');
@@ -70,7 +74,6 @@ function App() {
     return <h1>Loading</h1>
   }
 
-
   return (
     <Layout>
       <Switch>
@@ -109,7 +112,6 @@ function App() {
             <Fragment>
               <LeftHeader></LeftHeader>
               <RoomPage></RoomPage>
-
             </Fragment>
           }
 
@@ -118,8 +120,6 @@ function App() {
               <Redirect to='/'></Redirect>
             </Fragment>
           }
-
-    
         </Route>
       
         <Route path='/create' exact>
@@ -140,11 +140,24 @@ function App() {
       
 
         <Route path='/search' exact>
-          {!!isConnected &&
+          {isConnected &&
             <Fragment>
               <LeftHeader></LeftHeader>
               <SearchRoom></SearchRoom>
+            </Fragment>
+          }
 
+          {!isConnected &&
+            <Fragment>
+              <Redirect to='/'></Redirect>
+            </Fragment>
+          }
+        </Route>
+        <Route path='/settings' exact>
+          {isConnected &&
+            <Fragment>
+              <LeftHeader></LeftHeader>
+              <Settings></Settings>
             </Fragment>
           }
 
