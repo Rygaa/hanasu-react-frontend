@@ -14,17 +14,15 @@ const url4 = `${url}/checkIdToken`
 const url5 = `${url}/updateProfile`
 const url6 = `${url}/access-settings`
 
-export const signUp = ({username, password, email}) => {
+export const signUp = ({username, password, email, history}) => {
     return async (dispatch) => {
         const response = await axios.post(url1, {
             username,
             password,
             email
         })
-        console.log('sign up');
 
         const data = response.data
-        console.log(data);
         if (data.error) {
             console.log(data);
             dispatch(notificationActions.setNotificationLastUpdate('ADDED'))
@@ -33,6 +31,8 @@ export const signUp = ({username, password, email}) => {
         }
         dispatch(notificationActions.setNotificationLastUpdate('ADDED'))
         dispatch(notificationActions.addNotification(data.message))
+        console.log('hahaha')
+        history.push('/login')
     }
 }
 

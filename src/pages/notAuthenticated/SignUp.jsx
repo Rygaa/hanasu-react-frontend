@@ -8,19 +8,18 @@ import usernameImage from "../../img/username.png"
 import passwordImage from "../../img/password.png"
 import logo from "../../img/logo.png"
 import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const SignUp = () => {
     const dispatch = useDispatch()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
+    const history = useHistory();
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        dispatch(signUp({username, password, email}))
-        setUsername('')
-        setPassword('')
-        setEmail('')
+        dispatch(signUp({username, password, email, history}))
     }
 
     const onChangeUsername = (e) => {

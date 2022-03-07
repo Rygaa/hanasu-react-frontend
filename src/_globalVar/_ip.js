@@ -1,7 +1,3 @@
-const port = 1005;
-const ip = `http://192.168.1.4`
-const url = `${ip}:${port}`
-
-
-module.exports.port = port
+const local = false;
+const url = local ? `http://192.168.1.4:1005` : 'api.hanasu.me'
 module.exports.url = url
